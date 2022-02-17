@@ -1,26 +1,27 @@
 import * as React from "react";
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { StyleSheet } from "react-native";
 import { GiftedChat } from "react-native-gifted-chat";
 import { io } from "socket.io-client";
 
 const BOT = {
   _id: 2,
-  name: "Abdi",
+  name: "GPT3",
   avatar: "https://placeimg.com/140/140/tech",
 };
 
 const USER = {
   _id: 1,
-  name: "Abdi",
+  name: "user",
   avatar: "https://placeimg.com/140/140/people",
 };
+
+// Inorder to connect the frontend with the backend i use
+// tunneling to make it work. I do not know what causing it
+// but it seems there's many complaining about same issues
+// when they working with React Native.
+// I use ngrok software for tunneling: https://ngrok.com/
+
 const SERVER = "http://49d1-188-149-22-223.ngrok.io";
 
 const Chat = () => {
@@ -28,8 +29,6 @@ const Chat = () => {
 
   const socketRef = useRef();
   // const [quickReply, setQuickReply] = useState([]);
-
-  console.log(SERVER);
 
   io(SERVER).once("connect", () => {
     console.log("Frontend is connected with Backend");
@@ -76,7 +75,7 @@ const Chat = () => {
       messages={messages}
       showAvatarForEveryMessage={true}
       onSend={(message) => onSend(message)}
-      user={{ _id: 1 }}
+      user={USER}
     />
   );
 };
