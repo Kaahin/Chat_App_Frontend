@@ -5,4 +5,4 @@
 # Inorder to work you also need Chat_App Backend
 # Testet to work with Android only (so far).
 
-# Todo: finish registration and login page and connect to backends database
+# Todo: To finish registration and login page and connect to backends database
