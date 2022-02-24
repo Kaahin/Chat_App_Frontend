@@ -3,7 +3,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { StyleSheet } from "react-native";
 import { GiftedChat } from "react-native-gifted-chat";
 import { io } from "socket.io-client";
-import { SERVER_NGROK_ADDRESS } from "@env";
+// import config from "../config";
 
 const BOT = {
   _id: 2,
@@ -23,16 +23,16 @@ const USER = {
 // when they working with React Native.
 // I use ngrok software for tunneling: https://ngrok.com/
 
-const SERVER = "https://43bf-188-149-22-223.ngrok.io";
+const SERVER = "https://0a50-188-149-22-223.ngrok.io";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
 
   const socketRef = useRef();
 
-  io(SERVER).once("connect", () => {
-    console.log("Frontend is connected with Backend");
-  });
+  // io(SERVER).once("connect", () => {
+  //   console.log("Frontend is connected with Backend");
+  // });
 
   useLayoutEffect(() => {
     socketRef.current = io(SERVER);

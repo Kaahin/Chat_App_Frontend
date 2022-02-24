@@ -11,7 +11,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Chat from "./components/Chat";
 import Signin from "./components/Signin";
-// import Signup from "./components/Signup";
+import Signup from "./components/Signup";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Signin">
         <Stack.Screen name="Signin" component={Signin} />
-        {/* <Stack.Screen name="Signup" component={Signup} /> */}
+        <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen
           name="Chat"
           component={Chat}

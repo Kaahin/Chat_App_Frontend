@@ -15,7 +15,6 @@
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "@startupjs/babel-plugin-dotenv": "^0.43.1",
-    "dotenv": "^16.0.0",
     "expo": "~44.0.0",
     "expo-status-bar": "~1.2.0",
     "react": "17.0.1",
